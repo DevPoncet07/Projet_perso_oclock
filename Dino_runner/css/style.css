@@ -26,16 +26,16 @@ h1{
     transform: translate(0px,600px);
     }
     66%{
-        transform: translate(1700px,600px);
+        transform: translate(1400px,600px);
     }
     100%{
-        transform: translate(1700px,400px);
+        transform: translate(1400px,460px);
     }
 }
 
 @keyframes animTitle1End {
     0%{
-        transform: translate(600px,400px);
+        transform: translate(300px,460px);
     }
     100%{
         transform: translate(0px,0px);
@@ -49,16 +49,16 @@ h1{
     transform: translate(0px,600px);
     }
     66%{
-        transform: translate(1600px,600px);
+        transform: translate(1300px,600px);
     }
     100%{
-        transform: translate(1600px,400px);
+        transform: translate(1300px,460px);
     }
 }
 
 @keyframes animTitle2End {
     0%{
-        transform: translate(500px,400px);
+        transform: translate(200px,460px);
     }
     100%{
         transform: translate(0px,0px);
@@ -94,7 +94,7 @@ h1{
 }
 #score{
     position: absolute;
-    left:1800px;
+    left:1500px;
     transform: translateX(-50%);
     font-size: 1.5rem;
     display: flex;
@@ -120,7 +120,7 @@ h1{
 .game{
     width:1000px;
     height:800px;
-    margin: auto 800px;
+    margin: 50px 500px;
     position: relative;
 }
 

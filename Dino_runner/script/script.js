@@ -32,6 +32,8 @@ const allScore = document.querySelector("#score")
 const title1 = document.querySelector('.title1')
 const title2 = document.querySelector('.title2')
 
+let coordTitle1 = [2750, 460];
+let coordTitle2 = [2700, 460];
 let title1InMove = false;
 let alreadyMoveTitle1 = false;
 let title2InMove = false;
@@ -85,7 +87,7 @@ function drawGame() {
             alreadyMoveScore = true
             scoreInMove = true
         } else if (score%1000 > 750 &&  !timeBetwennObstacle<35 && !alreadyMoveTitle1) {
-            timeBetwennObstacle = 250;
+            timeBetwennObstacle = 300;
             title1.style.animation = `animTitle1Start ${timeLongAnimStart}s`
             alreadyMoveTitle1 = true
             title1InMove = true
@@ -113,12 +115,12 @@ function drawGame() {
                     terminateGame()
                 }
             }
-            if (coordTitle1[0] < 600) {
+            if (coordTitle1[0] < 300) {
                 title1InMove = false;
                 title2InMove = true;
                 title1.style.transform = `translate( 0px , 0px)`;
                 title1.style.animation = "animTitle1End 1s";
-                coordTitle1 = [2800, 410];
+                coordTitle1 = [2750, 460];
 
                 
             }
@@ -134,11 +136,11 @@ function drawGame() {
                     terminateGame()
                 }
             }
-            if (coordTitle2[0] < 500) {
+            if (coordTitle2[0] < 200) {
                 title2InMove = false
                 title2.style.transform = `translate( 0px , 0px)`
                 title2.style.animation = `animTitle2End 1s`;
-                coordTitle2 = [2700, 410];
+                coordTitle2 = [2700, 460];
             }
         }
 
@@ -163,8 +165,8 @@ function drawGame() {
         nbScore.textContent = "0".repeat(5 - (score).toString().length) + score
         if (score % 500 === 0) {
             vitesse += 3
-            timeLongAnimStart-=0.2;
-            timeShortAnimStart-=0.2;
+            timeLongAnimStart-=0.1;
+            timeShortAnimStart-=0.1;
         }
         if (score % 1000 === 0) {
             timeMinObstacle--;
@@ -204,7 +206,7 @@ function moveDinoOnJump() {
 }
 
 function generateObstacle() {
-    const typeObstacle=generateNumberAlea(1,3);
+    const typeObstacle=generateNumberAlea(1,4);
     switch (typeObstacle){
         case 1:
             const element = document.createElement('div');
@@ -236,9 +238,37 @@ function generateObstacle() {
                 posx: 1060,
             }
             obstacles.push(obstacle2);
-
-        break
-}
+            break
+        case 3:
+            const element3 = document.createElement('div');
+            element3.classList.add('obstacle');
+            element3.style.transform = `translate(${1000}px,197px)`
+            game.append(element3)
+            const obstacle3 = {
+                element: element3,
+                posx: 1000,
+            }
+            obstacles.push(obstacle3);
+            const element4 = document.createElement('div');
+            element4.classList.add('obstacle');
+            element4.style.transform = `translate(${1060}px,197px)`
+            game.append(element4)
+            const obstacle4 = {
+                element: element4,
+                posx: 1060,
+            }
+            obstacles.push(obstacle4);
+            const element5 = document.createElement('div');
+            element5.classList.add('obstacle');
+            element5.style.transform = `translate(${1090}px,197px)`
+            game.append(element5)
+            const obstacle5 = {
+                element: element5,
+                posx: 1090,
+            }
+            obstacles.push(obstacle5);
+            break
+        }
 }
 
 function moveObstacle() {
@@ -307,8 +337,8 @@ function reloadGame() {
     scoreInMove = false;
     alreadyMoveScore = false;
 
-    coordTitle1 = [3050, 410];
-    coordTitle2 = [3000, 410];
+    coordTitle1 = [2750, 460];
+    coordTitle2 = [2700, 460];
     title1InMove = false;
     alreadyMoveTitle1 = false;
     title2InMove = false;
