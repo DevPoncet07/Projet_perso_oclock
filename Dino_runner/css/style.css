@@ -94,7 +94,7 @@ h1{
 }
 #score{
     position: absolute;
-    left:70%;
+    left:1800px;
     transform: translateX(-50%);
     font-size: 1.5rem;
     display: flex;
@@ -120,7 +120,7 @@ h1{
 .game{
     width:1000px;
     height:800px;
-    margin: auto auto;
+    margin: auto 800px;
     position: relative;
 }
 
